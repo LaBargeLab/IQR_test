@@ -60,13 +60,13 @@ this function requires a couple of inputs detailes below:
      geneset       - character vector of interested genes 
                      (same nomenclature as symbol)
 
-The output of `r stoichiometry()` is a dataframe that you can use for stat tests e.g.:
+The output of `stoichiometry()` is a dataframe that you can use for stat tests e.g.:
 
 ```r
 t.test( stoi$IQR ~stoi$variable)
 ```
 
-And there is a convenience plotting wrapper in `r stoi_plot`
+And there is a convenience plotting wrapper in `stoi_plot`
 
 An example pipeline is in the script run_IQR_script.R
 
