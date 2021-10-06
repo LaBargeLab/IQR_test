@@ -48,7 +48,7 @@ geneset <- c("gene1", "gene2", "gene3", "gene4", "gene5")
 ```
 
 
-From there we can run the `r stoichiometry()` function.
+From there we can run the `stoichiometry()` function.
 this function requires a couple of inputs detailes below:
 
 
