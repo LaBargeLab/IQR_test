@@ -26,11 +26,11 @@ stoichiometry <- function(symbol, expression, variable, sample, geneset) { #n_gr
                     variable=variable,
                     rep = sample)
   
-  dat <- filter(dat, symbol %in% geneset)
+  dat <- dplyr::filter(dat, symbol %in% geneset)
   
-  dat <- dat %>% group_by(variable, rep)
+  dat <- dat %>% dplyr::group_by(variable, rep)
   
-  dat2 <- dat %>% summarise(IQR = IQR(expression), .groups = "drop_last")
+  dat2 <- dat %>% dplyr::summarise(IQR = IQR(expression), .groups = "drop_last")
   
   return(dat2)
   
