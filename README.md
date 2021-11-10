@@ -105,7 +105,7 @@ And there is a convenience plotting wrapper in `stoi_plot`
 ```r
 stoi_plot(stoi)
 ```
-[Rplot02.png]
+[[Rplot02.png]]
 
 
 
