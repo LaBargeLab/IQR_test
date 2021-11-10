@@ -115,5 +115,7 @@ stoi_plot(stoi)
 
 
 
-An example pipeline is in the script run_IQR_script.R
+An example pipeline can be accessed in the [run_IQR_script](run_IQR_script.R).
+
+
 
