@@ -2,14 +2,19 @@
 
 ## Readme
 
-Here I will provide R functions to a method paper explaining my loss of stoichiometry stuff and providing (hopefully useful) helper functions.
+Here we provide provide R functions to quantify the loss of stoichiometry for protein complexes in omics data as explained in the STAR Protocols paper XYZ.
 
-## How to work this mess
+## Example work flow
 
 Let's prepare the workspace
 
 ```r
-library(tidyverse)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(ggrepel)
+library(ggsci)
+
 
 # Load the data 
 
