@@ -102,6 +102,11 @@ t.test( stoi$IQR ~stoi$variable)
 And there is a convenience plotting wrapper in `stoi_plot`
 
 
+```r
+stoi_plot(stoi)
+```
+[Rplot02.png]
+
 
 
 An example pipeline is in the script run_IQR_script.R
