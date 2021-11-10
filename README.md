@@ -71,14 +71,14 @@ stoi <- stoichiometry(expression = data$value,
                       
                       
 head(sttoi)
-#  variable rep        IQR
-#  <fct>    <chr>    <dbl>
-#1 A        sample1     30
-#2 A        sample2     21
-#3 A        sample3     49
-#4 A        sample4     26
-#5 A        sample5     57
-#6 B        sample10    38
+#   variable rep        IQR
+#   <fct>    <chr>    <dbl>
+# 1 A        sample1     30
+# 2 A        sample2     21
+# 3 A        sample3     49
+# 4 A        sample4     26
+# 5 A        sample5     57
+# 6 B        sample10   120
 ```
 
 
@@ -87,16 +87,17 @@ head(sttoi)
 t.test( stoi$IQR ~stoi$variable)
 
 
-# 	Welch Two Sample t-test
-
+#	Welch Two Sample t-test
+#
 # data:  stoi$IQR by stoi$variable
-# t = 0.46726, df = 5.7128, p-value = 0.6576
+# t = -4.9643, df = 4.5092, p-value = 0.005601
 # alternative hypothesis: true difference in means is not equal to 0
 # 95 percent confidence interval:
-#  -15.48451  22.68451
+#  -216.46803  -65.53197
 # sample estimates:
 # mean in group A mean in group B 
-#            36.6            33.0 
+#            36.6           177.6 
+
 ```
 
 And there is a convenience plotting wrapper in `stoi_plot`
