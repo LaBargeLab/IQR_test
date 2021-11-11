@@ -2,11 +2,11 @@
 
 ## Readme
 
-Here we provide provide R functions to quantify the loss of stoichiometry for protein complexes in omics data as explained in the STAR Protocols paper XYZ.
+Here we provide provide R functions to quantify the loss of stoichiometry for protein complexes in omics data as explained in the STAR Protocols paper.
 
 ## Example work flow
 
-Let's prepare the workspace
+Prepare the workspace
 
 ```r
 library(readr)
@@ -54,11 +54,11 @@ geneset <- c("gene1", "gene2", "gene3", "gene4", "gene5")
 
 
 From there we can run the `stoichiometry()` function.
-this function requires a couple of inputs detailes below:
+This function requires a couple of inputs detailed below:
 
 
      symbol        - character vector of gene symbols
-     expression    - numeric vectors of expression values
+     expression    - numeric vector of expression values
      variable      - character or factor vector with group information 
                      (e.g. age group or treatment)
      sample        - character vector of sample IDs
