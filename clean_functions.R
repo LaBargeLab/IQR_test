@@ -1,15 +1,15 @@
 
 stoichiometry <- function(symbol, expression, variable, sample, geneset) { #n_groups no clue what I meant
- 
+  
   # This function calculates the IQR values for selected genesets
-    # The required inputs are:
-    # symbol        - character vector of gene symbols
-    # expression    - numeric vectors of expression values
-    # variable      - character or factor vector with group information 
-    #                 (e.g. age group or treatment)
-    # sample        - character vector of sample IDs
-    # geneset       - character vector of interested genes 
-    #                 (same nomenclature as symbol)
+  # The required inputs are:
+  # symbol        - character vector of gene symbols
+  # expression    - numeric vectors of expression values
+  # variable      - character or factor vector with group information 
+  #                 (e.g. age group or treatment)
+  # sample        - character vector of sample IDs
+  # geneset       - character vector of interested genes 
+  #                 (same nomenclature as symbol)
   require("dplyr")
   
   if(any(is.na(expression)))
@@ -18,15 +18,22 @@ stoichiometry <- function(symbol, expression, variable, sample, geneset) { #n_gr
     stop("remove NAs from gene symbols")
   if(length(as.factor(variable))<=2)
     stop("more variables required")
+  if(missing(geneset)) {
+    geneset <- symbol
+  }
   if(is.character(geneset)==F)
-    stop("remove NAs from gene symbols")
+    stop("check format of geneset")
+  
+  
+  print(paste0("calculating using ", length(geneset)," symbols"))
   
   dat <- data.frame(expression = expression, 
                     symbol= symbol, 
                     variable=variable,
                     rep = sample)
   
-  dat <- dplyr::filter(dat, symbol %in% geneset)
+    dat <- dplyr::filter(dat, symbol %in% geneset)
+  
   
   dat <- dat %>% dplyr::group_by(variable, rep)
   
@@ -42,7 +49,7 @@ stoi_plot <- function (data) {
   require("ggrepel")
   require("ggsci") 
   require("dplyr")
-    # test if enough samples for boxplot provided, if not just dotplot
+  # test if enough samples for boxplot provided, if not just dotplot
   if(length(as.factor(stoi$rep)) <9) {
     # dotplot
     ggplot(stoi, aes(variable, IQR, label = rep, color = variable)) +
@@ -56,13 +63,13 @@ stoi_plot <- function (data) {
     
   }
   if(length(as.factor(stoi$rep)) >9){
-  ggplot(stoi, aes(variable, IQR, label = rep, fill = variable)) +
-    geom_boxplot() +
-    geom_point() +
-    theme_bw() +
-    scale_fill_aaas() +
-    geom_text_repel() +
-    ylab("Interquartilerange") +
-    xlab("")
+    ggplot(stoi, aes(variable, IQR, label = rep, fill = variable)) +
+      geom_boxplot() +
+      geom_point() +
+      theme_bw() +
+      scale_fill_aaas() +
+      geom_text_repel() +
+      ylab("Interquartilerange") +
+      xlab("")
   }
 }
