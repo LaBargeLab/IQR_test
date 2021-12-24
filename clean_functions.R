@@ -55,7 +55,7 @@ stoi_plot <- function (data) {
     # dotplot
     ggplot(stoi, aes(variable, IQR, label = rep, color = variable)) +
       geom_point() +
-      stat_summary(fun=mean, geom = "crossbar") +
+      stat_summary(fun=median, geom = "crossbar") +
       theme_bw() +
       geom_text_repel() +
       scale_color_aaas() +
