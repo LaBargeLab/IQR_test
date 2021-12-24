@@ -46,7 +46,7 @@ head(data)
 The IQR analyses are aimed to compare two genesets to see if those change - get deregulated (meaning increasing in IQR) - over a variable such as time, age, treatment.
 
 To calculate IQR for the two groups shown above we need to define a geneset first.
-In this example just 5 genes.
+In this example just 5 genes. If no geneset is supplied the IQR analyses are performed with the entire supplied dataframe.
 
 ```r
 geneset <- c("gene1", "gene2", "gene3", "gene4", "gene5")
@@ -64,6 +64,8 @@ This function requires a couple of inputs detailed below:
      sample        - character vector of sample IDs
      geneset       - character vector of interested genes 
                      (same nomenclature as symbol)
+                     if no geneset is supplied IQR analyses are performed based on all provided symbols
+
 
 The output of `stoichiometry()` is a dataframe that you can use for stat tests e.g.:
 
