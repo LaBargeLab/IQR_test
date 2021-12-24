@@ -1,5 +1,5 @@
 
-stoichiometry <- function(symbol, expression, variable, sample, geneset) { #n_groups no clue what I meant
+stoichiometry <- function(symbol, expression, variable, sample, geneset) { 
   
   # This function calculates the IQR values for selected genesets
   # The required inputs are:
