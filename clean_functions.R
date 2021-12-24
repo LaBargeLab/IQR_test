@@ -10,6 +10,7 @@ stoichiometry <- function(symbol, expression, variable, sample, geneset) {
   # sample        - character vector of sample IDs
   # geneset       - character vector of interested genes 
   #                 (same nomenclature as symbol)
+  #                 if no geneset is supplied IQR analyses are performed based on all privided symbols
   require("dplyr")
   
   if(any(is.na(expression)))
