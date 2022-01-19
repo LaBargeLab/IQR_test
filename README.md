@@ -1,3 +1,7 @@
+[![DOI](https://zenodo.org/badge/414033410.svg)](https://zenodo.org/badge/latestdoi/414033410)
+
+
+
 # Protocol for Evaluating the Loss of Stoichiometry and Coordinated Expression of Proteins
 
 Here we provide provide R functions to quantify the loss of stoichiometry for protein complexes in omics data as explained in the STAR Protocols paper.
