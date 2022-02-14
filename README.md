@@ -1,3 +1,6 @@
+<a href='https://github.com/LaBargeLab/IQR_test'><img src='sticker3.png' align="right" height="139" /></a>
+
+
 [![DOI](https://zenodo.org/badge/414033410.svg)](https://zenodo.org/badge/latestdoi/414033410)
 
 
